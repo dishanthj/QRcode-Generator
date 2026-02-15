@@ -3,22 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Modern QR Generator</title>
+<title>SecureQR | Smart QR Generator</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Header -->
-<div class="hero">
-  <h1>Modern QR Code Generator</h1>
-  <p>Create QR codes for Links, Email, Phone, Text, vCard, and WiFi</p>
-</div>
+<section class="hero fade-section">
+  <h1>SecureQR Generator</h1>
+  <p>Secure. Professional. High-Quality QR Codes.</p>
+</section>
 
-<!-- Card -->
-<div class="container">
-  
-  <!-- Left Column: QR Types + Input + Generate -->
-  <div class="left-col">
+<section class="main-container fade-section">
+
+  <div class="left-panel glass">
+
     <div class="tabs">
       <button onclick="setType(event,'url')" class="active">URL</button>
       <button onclick="setType(event,'email')">Email</button>
@@ -26,21 +24,22 @@
       <button onclick="setType(event,'text')">Text</button>
       <button onclick="setType(event,'vcard')">vCard</button>
       <button onclick="setType(event,'wifi')">WiFi</button>
-      <button onclick="goCustom()">Custom QR</button>
+      <button onclick="setType(event,'custom')">Custom QR</button>
     </div>
-    <!-- Dynamic Input Fields -->
+
     <div id="inputArea"></div>
-    <!-- Generate button -->
-    <button class="generate" onclick="generateQR()">Generate QR</button>
+
+    <button class="generate-btn" onclick="generateQR()">Generate QR</button>
+
   </div>
 
-  <!-- Right Column: QR Preview + Download -->
-  <div class="right-col">
+  <div class="right-panel glass">
     <img id="qrImage">
+    <canvas id="canvas" width="320" height="320"></canvas>
     <a id="downloadBtn" download="qrcode.png">Download</a>
   </div>
 
-</div>
+</section>
 
 <script src="script.js"></script>
 </body>
